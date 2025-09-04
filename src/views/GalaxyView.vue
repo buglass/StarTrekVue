@@ -1,14 +1,16 @@
 <template>
   <div>Welcome to the galaxy</div>
-  <div v-for="quadrant in quadrants">
-    <div>Quadrant {{ quadrant }}</div>
+  <div class="grid grid-cols-10 grid-rows-10">
+    <div v-for="quadrant in quadrants">
+      <div>{{ quadrant }}</div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const quadrants = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+const quadrants = ref(new Array<string>(100).fill('*'))
 </script>
 
 <style></style>
